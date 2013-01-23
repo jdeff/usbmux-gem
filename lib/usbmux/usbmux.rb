@@ -157,7 +157,7 @@ module Usbmux
       plist = CFPropertyList::List.new
       plist.value = CFPropertyList.guess(payload)
       xml = plist.to_str(CFPropertyList::List::FORMAT_XML, :formatted => true)
-      
+
       super(TYPE_PLIST, tag, xml)
     end
 
@@ -228,11 +228,15 @@ module Usbmux
         raise MuxError.new('Socket is connected, cannot process listener events')
       end
       rlo, wlo, xlo = IO.select([@socket.sock], [], [@socket.sock], timeout)
-      if xlo.length > 0
-        @socket.close
-        raise MuxError.new("Exception in listener socket")
-      elsif rlo.length > 0
-        _process_packet
+
+      # IO.select returns nil when timeout is reached. Check for nil before
+      unless rlo.nil?
+        if xlo.length > 0
+          @socket.close
+          raise MuxError.new("Exception in listener socket")
+        elsif rlo.length > 0
+          _process_packet
+        end
       end
     end
 
