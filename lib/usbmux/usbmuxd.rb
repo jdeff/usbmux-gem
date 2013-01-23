@@ -2,7 +2,7 @@ require 'rbconfig'
 require 'cfpropertylist'
 require 'socket'
 
-module Usbmuxd
+module Usbmux
   class MuxError < RuntimeError; end
   class MuxVersionError < MuxError; end
 

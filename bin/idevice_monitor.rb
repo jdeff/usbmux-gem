@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
-require 'usbmuxd'
+require 'usbmux'
 
-mux = Usbmuxd::USBMux.new
+mux = Usbmux::USBMux.new
 puts "Waiting for devices..."
 if !mux.devices
   mux.process(0.1)

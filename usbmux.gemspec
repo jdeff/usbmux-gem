@@ -1,16 +1,16 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'usbmuxd/version'
+require 'usbmux/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "usbmuxd"
-  gem.version       = Usbmuxd::VERSION
+  gem.name          = "usbmux"
+  gem.version       = Usbmux::VERSION
   gem.authors       = ["Jayme Deffenbaugh"]
   gem.email         = ["jdeffenbaugh@me.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Connecting and communicating to iDevices over USB}
+  gem.summary       = %q{Connecting and communicating to iDevices over USB}
+  gem.homepage      = "https://github.com/jdeff/usbmux-gem"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
@@ -18,5 +18,4 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency 'CFPropertyList'
-  gem.add_dependency 'nokogiri'
 end
