@@ -1,12 +1,15 @@
-# Usbmuxd
+# Usbmux
 
-TODO: Write a gem description
+The Usbmux gem is a ruby port of the python script, usbmux.py, by Hector Martin
+"marcan" <hector@marcansoft.com>. All credit goes to him and the work that the
+libusbmuxd guys have done. This project was more for my personal benefit and
+curiosity.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'usbmuxd'
+    gem 'usbmux'
 
 And then execute:
 
@@ -14,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install usbmuxd
+    $ gem install usbmux
 
 ## Usage
 
